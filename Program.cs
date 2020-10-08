@@ -28,7 +28,21 @@ namespace TicTacToeWorkshop
 
             TicTacToeClass.ShowBoardInGame(board);
 
+            Random random = new Random();
             int chance = 1;
+            Console.WriteLine("Player Call Head - 0 or Tail - 1");
+            int tossCall = Convert.ToInt32(Console.ReadLine());
+            int tossVar = random.Next(0, 2);
+            if (tossVar == tossCall)
+            {
+                Console.WriteLine("Player Won the toss");
+                chance = 1;
+            }
+            else
+            {
+                Console.WriteLine("Computer Won the toss");
+                chance = 2;
+            }
             TicTacToeClass.AllowUserForMove(board, chance);
         }
     }
